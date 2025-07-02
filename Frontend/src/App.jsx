@@ -18,6 +18,7 @@ function App() {
           <Route path="/manager" element={<ManagerDashboard />} />
           <Route path="/engineer" element={<EngineerDashboard />} />
           <Route path="/projects" element={<ProjectPage />} />
+          <Route path="/projects/create" element={<CreateProjectPage />} />
           <Route path="/assignments" element={<AssignmentPage />} />
           <Route path="/engineer/profile" element={<EngineerProfile/>} />
         </Routes>
