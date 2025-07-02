@@ -4,16 +4,23 @@ import { useAuth } from '../hooks/useAuth';
 import Header from '../components/UI/Header';
 import ProgressLabel from '../components/UI/ProgressLabel';
 import SkillTag from '../components/UI/SkillTag';
+import CreateProjectPage from './CreateProjectPage';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function ManagerDashboard() {
   const { user } = useAuth();
   const [engineers, setEngineers] = useState([]);
+  const navigate = useNavigate()
 
   useEffect(() => {
     if (user?.token) {
       api.getEngineers(user.token).then(setEngineers);
     }
   }, [user]);
+
+  function handleNavigate(){
+    return navigate('/projects/create')
+  }
 
   return (
     <>
@@ -22,7 +29,10 @@ export default function ManagerDashboard() {
         <h1 className="text-2xl font-bold mb-6">Team Overview</h1>
 
         <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {engineers.map((e) => {
+           <div >
+            <button onClick={handleNavigate}>Create Project</button>
+           </div>
+                     {engineers.map((e) => {
             const allocated = e.maxCapacity; // or replace with actual from assignments
             return (
               <li key={e._id} className="p-4 bg-white rounded-lg shadow-md space-y-3">

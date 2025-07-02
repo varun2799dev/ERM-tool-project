@@ -19,7 +19,6 @@ function App() {
           <Route path="/engineer" element={<EngineerDashboard />} />
           <Route path="/projects" element={<ProjectPage />} />
           <Route path="/assignments" element={<AssignmentPage />} />
-          <Route path="/projects/create" element={<CreateProjectPage/>} />
           <Route path="/engineer/profile" element={<EngineerProfile/>} />
         </Routes>
       </BrowserRouter>
