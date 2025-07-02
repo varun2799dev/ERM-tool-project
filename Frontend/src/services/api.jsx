@@ -1,4 +1,4 @@
-const API_URL = 'https://erm-tool-project-backend.vercel.app/api';
+const API_URL = 'https://erm-tool-project.onrender.com/api';
 
 const request = async (endpoint, method = 'GET', body, token) => {
   const res = await fetch(`${API_URL}${endpoint}`, {
